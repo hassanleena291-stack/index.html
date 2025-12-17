@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="styLG.CSS">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>CUSTOMERS</h2>
+
+        <form id="crudform">
+            <input type="text" id="name" placeholder="Enter name..." required>
+            <input type="email" id="email" placeholder="Enter email..." required>
+            <button type="submit" id="submitbtn" class="add_btn">Add</button>
+
+        </form>
+        <input type="text" id="search" placeholder="Search by name or email">
+        <ul id="userlist"></ul>
+    </div>
+    <script src="mainn.js"></script>
+</body>
+
+</html>

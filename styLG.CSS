@@ -1,0 +1,242 @@
+* {
+    font-family: 'Poppins', sans-serif;}
+
+
+/* =========================
+   GLOBAL STYLE
+========================= */
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #ff6d46;
+    --second-color: #ecfdf8;
+    --text-color: #121011;
+    --bg-color: #fff;
+    --box-shadow: 0 0 1vw 0.1vw rgb(14 52 54 / 15%);
+}
+
+/* =========================
+   CARD CONTAINER
+========================= */
+.container {
+    width: 31vw;
+    /* بالنسبة لعرض الشاشة */
+    background: #ffffff;
+    padding: 2vh 4vw;
+    /* مسافة داخلية نسبية للشاشة */
+    border-radius: 2vw;
+    /* زوايا البطاقة */
+    box-shadow: var(--box-shadow);
+    border: 0.2vw solid var(--main-color);
+}
+
+/* =========================
+   TITLE
+========================= */
+.container h2 {
+    text-align: center;
+    margin-bottom: 2vh;
+    letter-spacing: 0.1vw;
+    font-weight: 600;
+    font-size: 1.8rem;
+    /* حجم الخط بالنسبة لعرض الشاشة */
+}
+
+/* =========================
+   INPUTS
+========================= */
+#crudform input,
+#search {
+    width: 100%;
+    padding: 1vh 1vw;
+    margin-bottom: 1.5vh;
+    border-radius: 1vw;
+    border: 0.2vw solid #ddd;
+    background: #fafafa;
+    font-size: 1vw;
+    transition: all 0.3s ease;
+}
+
+#crudform input::placeholder,
+#search::placeholder {
+    color: #aaa;
+}
+
+#crudform input:focus,
+#search:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: var(--box-shadow);
+    background: var(--bg-color);
+}
+
+/* =========================
+   ADD / UPDATE BUTTON
+========================= */
+
+
+.add_btn {
+    width: 50%;
+    padding: 1.5vh 2vw;
+    border-radius: 4vw;
+    border: none;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: var(--text-color);
+    font-size: 1.2vw;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1.5vh;
+    transition: all 0.3s ease;
+    margin-left: 9vw;
+    
+}
+
+.add_btn:hover {
+    transform: translateY(-0.2vh);
+    box-shadow: var(--box-shadow);
+}
+
+/* =========================
+   USER LIST
+========================= */
+#userlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================
+   USER CARD
+========================= */
+#userlist li {
+    background: var(--bg-color);
+    border-radius: 2vw;
+    padding: 1.2vh 1vw;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--main-color);
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+#crudform button,
+#userlist li button {
+    background: linear-gradient(135deg, var(--main-color));
+    border: none;
+    color: white;
+    padding: 1vh 1.5vw;
+    border-radius: 1.5vw;
+    font-size: 0.9vw;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#crudform button:hover,
+#userlist li button:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+#userlist li button+button {
+    margin-left: 0.5vw;
+}
+
+
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+
+/* للتابلت */
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 60vw;
+        padding: 3vh 4vw;
+        border-radius: 3vw;
+    }
+
+    .container h2 {
+        font-size: 4vw;
+        letter-spacing: 0.3vw;
+    }
+
+    #crudform input,
+    #search {
+        font-size: 2vw;
+        padding: 1.5vh 1vw;
+        border-radius: 2vw;
+    }
+
+    .add_btn {
+    display: block; 
+        width: 60%;
+        font-size: 8vw;
+        padding: 1.5vh 2vw;
+        margin: 0 auto 2vh;
+        border-radius: 3vw;
+    }
+
+    #userlist li button {
+        font-size: 1.5vw;
+        padding: 1.2vh 1.5vw;
+        border-radius: 2vw;
+    }
+}
+
+/* للهاتف */
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 4vh 3vw;
+        border-radius: 5vw;
+    }
+
+    .container h2 {
+        font-size: 5vw;
+        letter-spacing: 0.2vw;
+    }
+
+    #crudform input,
+    #search {
+        font-size: 3vw;
+        padding: 2vh 2vw;
+        border-radius: 3vw;
+    }
+   
+
+    .add_btn {
+        width: 100%;
+       font-size: 1.6rem;
+        padding: 2vh 0;
+        margin-left: 0;
+        border-radius: 5vw;
+    }
+  
+
+    #userlist li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2vh 2vw;
+    }
+
+    #userlist li button {
+        width: 100%;
+        font-size: 3vw;
+        margin: 0.5vh 0 0 0;
+    }
+}
